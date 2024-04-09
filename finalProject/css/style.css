@@ -1,0 +1,120 @@
+html{
+    scroll-behavior: smooth;
+}
+body {
+    background-color: #dedede;
+    padding: 5px;
+    margin: 15px;
+    font-size: 25px;
+    font-family:Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-family:Arial, sans-serif;
+    font-size: 1.95em;
+}
+
+h2{
+    text-align:center;
+  }
+
+li{
+    margin-top: 20px;
+}
+
+img{
+    width: 100%; /* Ensure images fill the grid items */
+    height: 100%; /* Ensure images fill the grid items */
+    object-fit: cover; /* Scale the image while maintaining its aspect ratio */
+    border: none;
+  }
+
+.label{
+    display: inline-block;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.grid{
+    display: inline-grid;
+    gap: 10px;
+    padding: 10px;
+}
+
+figure {
+    position: relative; /* Set position of figure to relative */
+    overflow: hidden; /* Hide any overflow content */
+    border: 5px solid #000;
+    border-radius: 35px; /* Circular border radius for images */
+}
+
+figcaption {
+    position: absolute; /* Set the position of the figcaption to absolute */
+    bottom: 0; /* Align the figcaption to the bottom of the figure */
+    left: 0; /* Align the figcaption to the left of the figure */
+    width: 100%; /* Make the figcaption span the full width of the figure */
+    background-color: #000;
+    color: #eca33d;
+    text-align: center; /* Example text color */
+    padding: 5px; /* Example padding */
+}
+
+@media (min-width: 772px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr); /* Two-column grid layout */
+    }
+
+    figure {
+        border-radius: 50%; /* Circular border radius for images */
+    }
+
+    .grid figure:last-child {
+        grid-column: span 2; /* Span last figure across both columns */
+    }
+}
+
+@media(min-width: 992px){
+    .grid{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    figure
+    {
+        border-radius: 0px;
+    }
+    .grid figure:nth-child(3n){
+        grid-column: span 2;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html, body {
+      scroll-behavior: auto; 
+    }
+  }
+
+@media (prefers-color-scheme: dark) {
+    .grid img{
+      border-color: #000; 
+    }
+    body{
+        background-color: #333; 
+        color: #fff; 
+    }
+  }
+
+#button{
+    width: 20%;
+    height: 20%;
+    font-size: 50%;
+    background-color: #007bff; /* Blue background color */
+    color: #fff; /* White text color */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Add padding */
+    border-radius: 5px; /* Add border radius */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+#button:hover{
+    background-color: #0056b3; /* Darker blue background color on hover */
+}
